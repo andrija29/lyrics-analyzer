@@ -1,0 +1,22 @@
+{
+  "name": "lyricsanalyzer",
+  "version": "0.0.1",
+  "description": "Let's analyze tens of thousands (Serbian, for now) song lyrics and see what they have in common.",
+  "engines": {
+    "node": "10.6.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "github.com/andrija29",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^0.22.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.2",
+    "path": "^0.12.7",
+    "request": "^2.87.0"
+  }
+}
