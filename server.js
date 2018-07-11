@@ -5,11 +5,18 @@ var express = require('express'),
     server = require('http').createServer(app); 
 var request = require('request');
 var stdin = process.openStdin();
+var crawler = require(__dirname + "/scripts/crawler");
 
 var mongoose = require(__dirname + '/database');
 
-stdin.addListener("data", function(command) { 
-    //command.toString().trim()
+stdin.addListener("data", function(data) { 
+    var command = data.toString().trim();
+    switch(command){
+        case "crawlArtists": crawler.crawlArtists(); break;
+        case "crawlSongOfArtists": crawler.crawlSongOfArtist(); break;
+        case "crawlLyrics": crawler.crawlLyrics(); break;
+        default: console.log("Unknown command or parameter: " + command); break;
+    }
 });
 
 //Settings for local & Heroku IN THE SAME TIME (LoL)
@@ -17,7 +24,7 @@ app.set('port', (process.env.PORT || 5000));
 
 //Cuz, you know, lyrics can be long :P
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.json());3
 
 //Express is the BEST
 var router = express.Router();
