@@ -7,8 +7,7 @@ var artist = new Schema({
     link: String,
     listOfSongs: [{
         songName: String,
-        songLink: String,
-        songLyrics: String
+        songLink: String
     }]
 });
 

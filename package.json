@@ -1,6 +1,6 @@
 {
   "name": "lyricsanalyzer",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Let's analyze tens of thousands (Serbian, for now) song lyrics and see what they have in common.",
   "engines": {
     "node": "10.6.0"
